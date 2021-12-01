@@ -3,11 +3,7 @@ services:
   mpd:
     #build:
     #  context: ./
-    #  dockerfile: debian.armhf.Dockerfile
-    ##  dockerfile: alpine.armhf.Dockerfile
-    image: tobi312/rpi-mpd:debian
-    #image: tobi312/rpi-mpd:alpine
-    #image: tobi312/rpi-mpd:alpine-nocap
+    image: refreshinglyunconcerned/mpd:debian
     container_name: mpd
     ports:
       - 6600:6600
@@ -20,8 +16,6 @@ services:
       ## Time:
       #- /etc/timezone:/etc/timezone:ro
       #- /etc/localtime:/etc/localtime:ro
-    devices:
-      - "/dev/snd:/dev/snd"
     cap_add:
       - SYS_NICE
     restart: unless-stopped

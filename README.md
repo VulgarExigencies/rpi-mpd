@@ -1,4 +1,4 @@
-# MPD (Music Player Daemon) on Raspberry Pi / ARM
+# MPD (Music Player Daemon) on AMD64
 
 ### Supported tags
 -	[`debian` (*Dockerfile*)](https://github.com/Tob1asDocker/rpi-mpd/blob/master/debian.armhf.Dockerfile) (Debian 10 Buster (Slim))
@@ -9,14 +9,14 @@
 Music Player Daemon (MPD) is a free and open music player server. It plays audio files, organizes playlists and maintains a music database. In order to interact with it, a client program is needed. The MPD distribution includes mpc, a simple command line client.
 > [wikipedia.org/wiki/Music_Player_Daemon](https://en.wikipedia.org/wiki/Music_Player_Daemon) 
 
-### About these images:
-* based on official Images: [debian](https://hub.docker.com/_/debian) and [alpine](https://hub.docker.com/_/alpine)
+### About this image:
+* based on official Image:  [alpine](https://hub.docker.com/_/alpine)
 * It always uses the latest version contained in the distributions.
-* More infromation about MPD: [musicpd.org](https://www.musicpd.org/) and [github.com/MusicPlayerDaemon/MPD](https://github.com/MusicPlayerDaemon/MPD)
+* More information about MPD: [musicpd.org](https://www.musicpd.org/) and [github.com/MusicPlayerDaemon/MPD](https://github.com/MusicPlayerDaemon/MPD)
 
 ### How to use this image
 ```sh
-docker run --name mpd -p 6600:6600 -p 8000:8000 --device=/dev/snd:/dev/snd --cap-add=sys_nice -v $(pwd)/music:/var/lib/mpd/music:rw -v $(pwd)/playlists:/var/lib/mpd/playlists:rw -v $(pwd)/playlists:/var/lib/mpd/playlists:rw -v $(pwd)/data:/var/lib/mpd/data:rw -d tobi312/rpi-mpd:debian
+docker run --name mpd -p 6600:6600 -p 8000:8000 --device=/dev/snd:/dev/snd --cap-add=sys_nice -v $(pwd)/music:/var/lib/mpd/music:rw -v $(pwd)/playlists:/var/lib/mpd/playlists:rw -v $(pwd)/playlists:/var/lib/mpd/playlists:rw -v $(pwd)/data:/var/lib/mpd/data:rw -d refreshinglyunconcerned/mpd
 ```
 
 optional (own config): 
